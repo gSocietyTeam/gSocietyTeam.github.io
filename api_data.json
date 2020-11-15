@@ -484,6 +484,13 @@
             "optional": false,
             "field": "task.completed",
             "description": "<p>Stato della task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.hour",
+            "description": "<p>Orari da consegnare la task</p>"
           }
         ]
       }
@@ -549,6 +556,85 @@
             "optional": false,
             "field": "task.completed",
             "description": "<p>Stato della task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.hour",
+            "description": "<p>Orari da consegnare la task</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/task.js",
+    "groupTitle": "Task"
+  },
+  {
+    "type": "get",
+    "url": "/tasks/complteded",
+    "title": "Get all the completed tasks",
+    "name": "GetTasksCompleted",
+    "group": "Task",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Task[]",
+            "optional": false,
+            "field": "task",
+            "description": "<p>List of Tasks.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "task.id",
+            "description": "<p>Id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Date",
+            "optional": false,
+            "field": "task.date",
+            "description": "<p>Date</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.wasteType",
+            "description": "<p>Tipo materiale (R1/Materiale Grezzo)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.notes",
+            "description": "<p>Note sulla task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.type",
+            "description": "<p>Tipo della task (IN/OUT --&gt; Entrata oppure Uscita)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Boolean",
+            "optional": false,
+            "field": "task.completed",
+            "description": "<p>Stato della task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.hour",
+            "description": "<p>Orari da consegnare la task</p>"
           }
         ]
       }
@@ -609,6 +695,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Orario da consegnare la task (09.00-19.00)</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Task",
             "optional": false,
             "field": "task",
@@ -655,6 +748,13 @@
             "optional": false,
             "field": "task.completed",
             "description": "<p>Stato della task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.hour",
+            "description": "<p>Orari da consegnare la task</p>"
           }
         ]
       }
@@ -715,6 +815,13 @@
         "Success 200": [
           {
             "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Orario da consegnare la task (09.00-19.00)</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "Task",
             "optional": false,
             "field": "task",
@@ -761,6 +868,13 @@
             "optional": false,
             "field": "task.completed",
             "description": "<p>Stato della task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.hour",
+            "description": "<p>Orari da consegnare la task</p>"
           }
         ]
       }
@@ -981,5 +1095,454 @@
     "version": "0.0.0",
     "filename": "routes/user.js",
     "groupTitle": "User"
+  },
+  {
+    "type": "delete",
+    "url": "/vehicles/:id",
+    "title": "Delete an existing vehicle",
+    "name": "DeleteVehicle",
+    "group": "Vehicle",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Messaggio di avvenuta eliminazione.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/vehicle.js",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "get",
+    "url": "/vehicles/:id",
+    "title": "Get a particular vehicle",
+    "name": "GetVehicle",
+    "group": "Vehicle",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Vehicle",
+            "optional": false,
+            "field": "vehicle",
+            "description": "<p>Vehicle.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/vehicle.js",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "get",
+    "url": "/vehicles/",
+    "title": "Get all vehicles",
+    "name": "GetVehicles",
+    "group": "Vehicle",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Vehicle[]",
+            "optional": false,
+            "field": "vehicle",
+            "description": "<p>List of Vehicles.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/vehicle.js",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "post",
+    "url": "/vehicles/",
+    "title": "Create a new vehicle",
+    "name": "PostVehiicle",
+    "group": "Vehicle",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "telonato",
+            "description": "<p>telonato of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "adr",
+            "description": "<p>adr of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "euro",
+            "description": "<p>euro of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "buyDate",
+            "description": "<p>buyDate of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "buyValue",
+            "description": "<p>buyValue of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "booklet",
+            "description": "<p>booklet of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisionExpire",
+            "description": "<p>revisionExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisionFrequence",
+            "description": "<p>revisionFrequence of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cronoTachigraphExpire",
+            "description": "<p>cronoTachigraphExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attestazione",
+            "description": "<p>attestazione of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisioneEstintori",
+            "description": "<p>revisioneEstintori of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bolloExpire",
+            "description": "<p>bolloExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "polizzaExpire",
+            "description": "<p>polizzaExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assicurazioneFrequence",
+            "description": "<p>assicurazioneFrequence of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "CT_CP",
+            "description": "<p>CT_CP of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assicurazione",
+            "description": "<p>assicurazione of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "compagnia",
+            "description": "<p>compagnia of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "importo",
+            "description": "<p>importo of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "franchigia",
+            "description": "<p>franchigia of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "note",
+            "description": "<p>note of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "responsabile",
+            "description": "<p>responsabile of the vehicle</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Vehicle",
+            "optional": false,
+            "field": "vehicle",
+            "description": "<p>Vehicle</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/vehicle.js",
+    "groupTitle": "Vehicle"
+  },
+  {
+    "type": "put",
+    "url": "/vehicles/:id",
+    "title": "Update an existing vehicle",
+    "name": "PutVehicle",
+    "group": "Vehicle",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "owner",
+            "description": "<p>owner of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "type",
+            "description": "<p>type of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "telonato",
+            "description": "<p>telonato of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "adr",
+            "description": "<p>adr of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "euro",
+            "description": "<p>euro of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "buyDate",
+            "description": "<p>buyDate of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "buyValue",
+            "description": "<p>buyValue of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "booklet",
+            "description": "<p>booklet of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisionExpire",
+            "description": "<p>revisionExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisionFrequence",
+            "description": "<p>revisionFrequence of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "cronoTachigraphExpire",
+            "description": "<p>cronoTachigraphExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "attestazione",
+            "description": "<p>attestazione of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "revisioneEstintori",
+            "description": "<p>revisioneEstintori of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "bolloExpire",
+            "description": "<p>bolloExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "polizzaExpire",
+            "description": "<p>polizzaExpire of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assicurazioneFrequence",
+            "description": "<p>assicurazioneFrequence of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "CT_CP",
+            "description": "<p>CT_CP of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "assicurazione",
+            "description": "<p>assicurazione of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "compagnia",
+            "description": "<p>compagnia of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "importo",
+            "description": "<p>importo of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "franchigia",
+            "description": "<p>franchigia of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "note",
+            "description": "<p>note of the vehicle</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "responsabile",
+            "description": "<p>responsabile of the vehicle</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Vehicle",
+            "optional": false,
+            "field": "vehicle",
+            "description": "<p>Vehicle</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/vehicle.js",
+    "groupTitle": "Vehicle"
   }
 ]
