@@ -145,7 +145,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "priority",
-            "description": "<p>Priority of the Announce.</p>"
+            "description": "<p>Priority of the Announce (success=&gt;Bassa / warning=&gt;Media / danger=&gt;Alta).</p>"
           }
         ]
       }
@@ -290,6 +290,114 @@ define({ "api": [
     "groupTitle": "Auth"
   },
   {
+    "type": "get",
+    "url": "/errorLogs/",
+    "title": "Get all errors",
+    "name": "GetErrorLogs",
+    "group": "ErrorLogs",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ErrorLogs[]",
+            "optional": false,
+            "field": "errors",
+            "description": "<p>List of errors.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "error.id",
+            "description": "<p>Id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "error.error",
+            "description": "<p>Error</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "error.errorInfo",
+            "description": "<p>ErrorInfo</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/errorLog.js",
+    "groupTitle": "ErrorLogs"
+  },
+  {
+    "type": "post",
+    "url": "/errorLogs/",
+    "title": "Create a new errorLog",
+    "name": "PostErrorLogs",
+    "group": "ErrorLogs",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "error",
+            "description": "<p>The error.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "errorInfo",
+            "description": "<p>The info message of the error.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ErrorLog",
+            "optional": false,
+            "field": "errorLog",
+            "description": "<p>errorLog</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "errorLog.id",
+            "description": "<p>Id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errorLog.error",
+            "description": "<p>error</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "errorLog.errorLog",
+            "description": "<p>errorLog</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/errorLog.js",
+    "groupTitle": "ErrorLogs"
+  },
+  {
     "type": "delete",
     "url": "/isles/:id",
     "title": "Delete an existing isle",
@@ -327,6 +435,34 @@ define({ "api": [
             "optional": false,
             "field": "isle",
             "description": "<p>Isle.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "isle.id",
+            "description": "<p>Id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.city",
+            "description": "<p>Città</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.fir",
+            "description": "<p>Fir</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.hours",
+            "description": "<p>Orario Isola</p>"
           }
         ]
       }
@@ -348,8 +484,36 @@ define({ "api": [
             "group": "Success 200",
             "type": "Isle[]",
             "optional": false,
-            "field": "announces",
+            "field": "isle",
             "description": "<p>List of Isles.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "isle.id",
+            "description": "<p>Id</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.city",
+            "description": "<p>Città</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.fir",
+            "description": "<p>Fir</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "isle.hours",
+            "description": "<p>Orario Isola</p>"
           }
         ]
       }
@@ -364,6 +528,33 @@ define({ "api": [
     "title": "Create a new isle",
     "name": "PostIsle",
     "group": "Isle",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "city",
+            "description": "<p>Città</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "fir",
+            "description": "<p>FIR.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "hours",
+            "description": "<p>Orario Isola.</p>"
+          }
+        ]
+      }
+    },
     "success": {
       "fields": {
         "Success 200": [
@@ -921,6 +1112,29 @@ define({ "api": [
             "optional": false,
             "field": "user",
             "description": "<p>User who is a Driver.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/user.js",
+    "groupTitle": "User"
+  },
+  {
+    "type": "get",
+    "url": "/users/profile",
+    "title": "Get logged in user",
+    "name": "GetLoggedInUser",
+    "group": "User",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "User",
+            "optional": false,
+            "field": "user",
+            "description": "<p>User.</p>"
           }
         ]
       }
