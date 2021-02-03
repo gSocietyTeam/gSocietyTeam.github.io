@@ -648,7 +648,7 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/gallery",
+    "url": "/photos/gallery/",
     "title": "Get list of photos byte array of array id",
     "name": "GetGallery",
     "group": "Photo",
