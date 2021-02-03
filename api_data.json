@@ -63,6 +63,13 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "announce.type",
+            "description": "<p>Type of the waste material to be exported</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "announce.UserId",
             "description": "<p>UserId</p>"
           }
@@ -109,6 +116,13 @@
             "optional": false,
             "field": "announces.priority",
             "description": "<p>Priority</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "announce.type",
+            "description": "<p>Type of the waste material to be exported</p>"
           },
           {
             "group": "Success 200",
@@ -185,6 +199,13 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
+            "field": "announce.type",
+            "description": "<p>Type of the waste material to be exported</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
             "field": "announce.UserId",
             "description": "<p>UserId</p>"
           }
@@ -251,6 +272,13 @@
             "optional": false,
             "field": "announce.priority",
             "description": "<p>Priority</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "announce.type",
+            "description": "<p>Type</p>"
           },
           {
             "group": "Success 200",
@@ -597,6 +625,144 @@
   },
   {
     "type": "delete",
+    "url": "/photos/:id",
+    "title": "Delete an existing photo",
+    "name": "DeletePhoto",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Messaggio di avvenuta eliminazione.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "post",
+    "url": "/gallery",
+    "title": "Get list of photos byte array of array id",
+    "name": "GetGallery",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Photo",
+            "optional": false,
+            "field": "photos",
+            "description": "<p>Photo.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "get",
+    "url": "/photos/:id",
+    "title": "Get a particular photo",
+    "name": "GetPhoto",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Photo",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "get",
+    "url": "/photos/",
+    "title": "Get all photos",
+    "name": "GetPhotos",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Photo[]",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>List of Photos.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "post",
+    "url": "/photos/",
+    "title": "Create a new photo",
+    "name": "PostPhoto",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Photo",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "put",
+    "url": "/photos/:id",
+    "title": "Update an existing photo",
+    "name": "PutPhoto",
+    "group": "Photo",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Photo",
+            "optional": false,
+            "field": "photo",
+            "description": "<p>Photo</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/photo.js",
+    "groupTitle": "Photo"
+  },
+  {
+    "type": "delete",
     "url": "/tasks/:id",
     "title": "Delete an existing task",
     "name": "DeleteTask",
@@ -616,6 +782,29 @@
     },
     "version": "0.0.0",
     "filename": "routes/task.js",
+    "groupTitle": "Task"
+  },
+  {
+    "type": "delete",
+    "url": "/tasks/:id",
+    "title": "Delete an existing task",
+    "name": "DeleteTask",
+    "group": "Task",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>Messaggio di avvenuta eliminazione.</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/thirdparty.js",
     "groupTitle": "Task"
   },
   {
@@ -682,6 +871,13 @@
             "optional": false,
             "field": "task.hour",
             "description": "<p>Orari da consegnare la task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.udc",
+            "description": "<p>Unità di Carico</p>"
           }
         ]
       }
@@ -754,6 +950,13 @@
             "optional": false,
             "field": "task.hour",
             "description": "<p>Orari da consegnare la task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.udc",
+            "description": "<p>Unità di Carico</p>"
           }
         ]
       }
@@ -764,7 +967,7 @@
   },
   {
     "type": "get",
-    "url": "/tasks/complteded",
+    "url": "/tasks/completed",
     "title": "Get all the completed tasks",
     "name": "GetTasksCompleted",
     "group": "Task",
@@ -826,6 +1029,13 @@
             "optional": false,
             "field": "task.hour",
             "description": "<p>Orari da consegnare la task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.udc",
+            "description": "<p>Unità di Carico</p>"
           }
         ]
       }
@@ -877,6 +1087,13 @@
             "optional": false,
             "field": "notes",
             "description": "<p>Notes of the task.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "hour",
+            "description": "<p>Orario da consegnare la task (09.00-19.00)</p>"
           }
         ]
       }
@@ -884,13 +1101,6 @@
     "success": {
       "fields": {
         "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "hour",
-            "description": "<p>Orario da consegnare la task (09.00-19.00)</p>"
-          },
           {
             "group": "Success 200",
             "type": "Task",
@@ -946,6 +1156,13 @@
             "optional": false,
             "field": "task.hour",
             "description": "<p>Orari da consegnare la task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.udc",
+            "description": "<p>Unità di Carico</p>"
           }
         ]
       }
@@ -1066,6 +1283,13 @@
             "optional": false,
             "field": "task.hour",
             "description": "<p>Orari da consegnare la task</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "task.udc",
+            "description": "<p>Unità di Carico</p>"
           }
         ]
       }
@@ -1073,6 +1297,236 @@
     "version": "0.0.0",
     "filename": "routes/task.js",
     "groupTitle": "Task"
+  },
+  {
+    "type": "put",
+    "url": "/announces/:id",
+    "title": "Update an existing announce",
+    "name": "PutTask",
+    "group": "Task",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ThirdParty",
+            "optional": false,
+            "field": "thirdparty",
+            "description": "<p>Third party Task.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/thirdparty.js",
+    "groupTitle": "Task"
+  },
+  {
+    "type": "get",
+    "url": "/thirtdparty/:id",
+    "title": "Get a specific third party task",
+    "name": "GetThirdPartyTask",
+    "group": "ThirdParty",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ThirdParty",
+            "optional": false,
+            "field": "thirdparty",
+            "description": "<p>Third party Task.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/thirdparty.js",
+    "groupTitle": "ThirdParty"
+  },
+  {
+    "type": "get",
+    "url": "/thirtdparty/",
+    "title": "Get all third party tasks",
+    "name": "GetThirdPartyTasks",
+    "group": "ThirdParty",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ThirdParty[]",
+            "optional": false,
+            "field": "thirdparty",
+            "description": "<p>List of third party Tasks.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/thirdparty.js",
+    "groupTitle": "ThirdParty"
+  },
+  {
+    "type": "post",
+    "url": "/thirdparty/",
+    "title": "Create a new third party task",
+    "name": "PostThirdPartyTask",
+    "group": "ThirdParty",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ThirdParty",
+            "optional": false,
+            "field": "thirdparty",
+            "description": "<p>Third party Task.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Integer",
+            "optional": false,
+            "field": "thirdparty.type",
+            "description": "<p>(IN/OUT)</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.who",
+            "description": "<p>Who</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "thirdparty.what",
+            "description": "<p>What</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.0",
+    "filename": "routes/thirdparty.js",
+    "groupTitle": "ThirdParty"
   },
   {
     "type": "delete",
